@@ -1,2 +1,10 @@
+github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
+github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/ricky8221/NDE_DB v0.0.0-20240217044731-cd813018b351 h1:j4fxz+Xy45JTHGVl5pbPV3L/ZRb2OB44FlLuXFFRol0=
 github.com/ricky8221/NDE_DB v0.0.0-20240217044731-cd813018b351/go.mod h1:DArdK4JE4mWXfpZcf6iRgzogrK/bI2qOGZJMBz5YAuA=
+github.com/ricky8221/NDE_DB v0.0.0-20240217052314-9ce9ce1bd38e h1:IS9lvudyDD+9Xmd0SWlJRtSF4DILnEQyruGyUZsrwzs=
+github.com/ricky8221/NDE_DB v0.0.0-20240217052314-9ce9ce1bd38e/go.mod h1:ayHVuXbn2aJZtn1DqVN1JoWf2JbrQPLpeX0N2nsBOtk=
+github.com/ricky8221/NDE_DB v0.0.0-20240219225106-685357862489 h1:yt8wFfu1LFWKTbxmppY9NymBY1Y3xJXHjG9PZVb3CjE=
+github.com/ricky8221/NDE_DB v0.0.0-20240219225106-685357862489/go.mod h1:cmm6Vh4Olqv7oSOce0EMNeWBGSkYBSRTtL/Fanmh3xw=
+github.com/ricky8221/NDE_DB v0.0.0-20240219225721-f8baffe7b24e h1:dvv13vQvlYCoQr9M5BIcvPc099wPPqaVXNQ9CJxOc/I=
+github.com/ricky8221/NDE_DB v0.0.0-20240219225721-f8baffe7b24e/go.mod h1:cmm6Vh4Olqv7oSOce0EMNeWBGSkYBSRTtL/Fanmh3xw=
