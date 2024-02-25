@@ -1,54 +1,32 @@
 package main
 
 import (
-	"context"
+	"NDE_backend/api"
+	"NDE_backend/util"
 	"database/sql"
-	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
-	"github.com/ricky8221/NDE_DB/sqlc_func"
-	"github.com/ricky8221/NDE_DB/util"
 	"log"
-	"net/http"
 )
 
 func main() {
-	// Initialize the Gin engine.
-	r := gin.Default()
-
-	// DB connect string
-	connStr := util.GetConnStr()
-
-	// Open a database connection.
-	db, err := sql.Open("postgres", connStr)
+	config, err := util.LoadConfig(".")
 	if err != nil {
-		log.Fatal(err)
-	}
-	defer db.Close()
-
-	// Verify our connection is good.
-	err = db.Ping()
-	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Cannot load config:", err)
 	}
 
-	r.POST("/createCompany", func(c *gin.Context) {
-		var req sqlc_func.CreateCompanyReq
+	conn, err := sql.Open(config.DBDriver, config.DBSource)
+	if err != nil {
+		log.Fatal("Cannot connect to db", err)
+	}
 
-		// Bind the JSON to the struct
-		if err := c.ShouldBindJSON(&req); err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-			return
-		}
+	store := api.NewStore(conn)
+	server, err := api.NewServer(config)
+	if err != nil {
+		log.Fatal("cannot create server: ", err)
+	}
 
-		company, err := sqlc_func.CreateCompany(context.Background(), db, req)
-		if err != nil {
-			// Handle the error appropriately
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create company: " + err.Error()})
-			return
-		}
-
-		c.JSON(http.StatusOK, gin.H{"status": "success", "company": company})
-	})
-
-	r.Run()
+	err = server.Start(config.ServerAddress)
+	if err != nil {
+		log.Fatal("Cannot start server", err)
+	}
 }
