@@ -5,7 +5,7 @@ go 1.21.6
 require (
 	github.com/gin-gonic/gin v1.9.1
 	github.com/lib/pq v1.10.9
-	github.com/ricky8221/NDE_DB v0.0.0-20240225212721-2754df697b0d
+	github.com/ricky8221/NDE_DB v0.0.0-20240225213041-b1aed71f4d7f
 	github.com/spf13/viper v1.18.2
 )
 
@@ -15,6 +15,9 @@ require (
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
 	cloud.google.com/go/firestore v1.14.0 // indirect
 	cloud.google.com/go/longrunning v0.5.4 // indirect
+	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
+	github.com/aead/chacha20poly1305 v0.0.0-20170617001512-233f39982aeb // indirect
+	github.com/aead/poly1305 v0.0.0-20180717145839-3fee0db0b635 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/bytedance/sonic v1.9.1 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
@@ -57,6 +60,7 @@ require (
 	github.com/nats-io/nats.go v1.31.0 // indirect
 	github.com/nats-io/nkeys v0.4.6 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
+	github.com/o1egl/paseto v1.0.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sagikazarmark/crypt v0.17.0 // indirect
