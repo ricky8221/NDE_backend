@@ -177,6 +177,8 @@ github.com/hashicorp/memberlist v0.5.0 h1:EtYPN8DpAURiapus508I4n9CzHs2W+8NZGbmmR
 github.com/hashicorp/memberlist v0.5.0/go.mod h1:yvyXLpo0QaGE59Y7hDTsTzDD25JYBZ4mHgHUZ8lrOI0=
 github.com/hashicorp/serf v0.10.1 h1:Z1H2J60yRKvfDYAOZLd2MU0ND4AH/WDz7xYHDWQsIPY=
 github.com/hashicorp/serf v0.10.1/go.mod h1:yL2t6BqATOLGc5HF7qbFkTfXoPIY0WZdWHfEvMqbG+4=
+github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
+github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
 github.com/json-iterator/go v1.1.9/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
@@ -277,6 +279,8 @@ github.com/ricky8221/NDE_DB v0.0.0-20240225212721-2754df697b0d h1:WLzZ2iy8IB45xe
 github.com/ricky8221/NDE_DB v0.0.0-20240225212721-2754df697b0d/go.mod h1:jjVQHLlh7O3qRJL30OCS1Cj8SzvOPKiIeodpsYqSo0Y=
 github.com/ricky8221/NDE_DB v0.0.0-20240225213041-b1aed71f4d7f h1:kT480Ab4R4JXy5Nw2HQu5UxAWwY9sNXYsLfjAhegcGo=
 github.com/ricky8221/NDE_DB v0.0.0-20240225213041-b1aed71f4d7f/go.mod h1:MP/pJHkC/JLcxyUidiCyy9Ng5LFrLeHiIo6hgSbt5/8=
+github.com/ricky8221/NDE_DB v0.0.0-20240226041851-713fe121f913 h1:P151D6O+8PO7bnwPu+c7955w9Md0VaPV+99ILqGFSrg=
+github.com/ricky8221/NDE_DB v0.0.0-20240226041851-713fe121f913/go.mod h1:boK+9gH4dQM/YKdQWBIcjadCpaXm3cyF9oDVaaGPNxM=
 github.com/rogpeppe/go-internal v1.9.0 h1:73kH8U+JUqXU8lRuOHeVHaa/SZPifC7BkcraZVejAe8=
 github.com/rogpeppe/go-internal v1.9.0/go.mod h1:WtVeX8xhTBvf0smdhujwtBcq4Qrzq/fJaraNFVN+nFs=
 github.com/ryanuber/columnize v0.0.0-20160712163229-9b3edd62028f/go.mod h1:sm1tb6uqfes/u+d4ooFouqFdy9/2g9QGwK3SQygK0Ts=

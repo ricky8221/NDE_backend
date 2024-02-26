@@ -1,10 +1,10 @@
 package api
 
 import (
+	"NDE_backend/token"
 	"NDE_backend/util"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/ricky8221/NDE_DB/token"
 )
 
 // Server servers HTTP requests
@@ -29,7 +29,12 @@ func NewServer(config util.Config, store Store) (*Server, error) {
 
 func (server *Server) setupRouter() {
 	router := gin.Default()
-	router.POST("/createCompany", server.createCompany)
+	router.POST("/users/login", server.loginUser)
+
+	// authRoutes Validating token before reaching auth needed path
+	groupAuthMiddleware := router.Group("/").Use(groupAuthMiddleware(server.tokenMaker, server.config.AllRights))
+
+	groupAuthMiddleware.POST("/createCompany", server.createCompany)
 
 	server.router = router
 }
