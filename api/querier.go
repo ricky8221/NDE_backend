@@ -6,8 +6,10 @@ import (
 )
 
 type Querier interface {
-	CreateCompany(ctx context.Context, arg ndedb.CreateCompanyParams) (ndedb.Company, error)
 	GetUser(ctx context.Context, arg string) (ndedb.User, error)
+	CreateUser(ctx context.Context, arg ndedb.CreateUserParams) (ndedb.User, error)
+	CreateCompany(ctx context.Context, arg ndedb.CreateCompanyParams) (ndedb.Company, error)
+	GetCompany(ctx context.Context, arg string) (ndedb.Company, error)
 }
 
 var _ Querier = (*ndedb.Queries)(nil)

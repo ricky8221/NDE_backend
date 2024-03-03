@@ -2,6 +2,8 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	ndedb "github.com/ricky8221/NDE_DB/db/sqlc"
+	"github.com/ricky8221/NDE_DB/dbFunc"
 	"github.com/ricky8221/NDE_DB/util"
 	"net/http"
 	"time"
@@ -64,6 +66,35 @@ func (server *Server) loginUser(ctx *gin.Context) {
 		Username:    user.Username,
 		FullName:    user.FullName,
 		AccessToken: accessToken,
+	}
+	ctx.JSON(http.StatusOK, res)
+}
+
+func (server *Server) createUser(ctx *gin.Context) {
+	var req ndedb.CreateUserParams
+	if err := ctx.ShouldBindJSON(&req); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+	hashedPassword, err := util.HashPassword(req.Password)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+	req.Password = hashedPassword
+
+	user, err := server.store.CreateUser(ctx, req)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+	res := dbFunc.UserResponse{
+		Username: user.Username,
+		FullName: user.FullName,
+		Email:    user.Email,
+		Phone:    user.Phone,
 	}
 	ctx.JSON(http.StatusOK, res)
 }

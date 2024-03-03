@@ -5,7 +5,7 @@ go 1.21.6
 require (
 	github.com/gin-gonic/gin v1.9.1
 	github.com/lib/pq v1.10.9
-	github.com/ricky8221/NDE_DB v0.0.0-20240226041851-713fe121f913
+	github.com/ricky8221/NDE_DB v0.0.0-20240303063904-acdbadd9aeeb
 	github.com/spf13/viper v1.18.2
 )
 

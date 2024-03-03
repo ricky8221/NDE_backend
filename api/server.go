@@ -29,12 +29,14 @@ func NewServer(config util.Config, store Store) (*Server, error) {
 
 func (server *Server) setupRouter() {
 	router := gin.Default()
+	router.POST("/users/create", server.createUser)
 	router.POST("/users/login", server.loginUser)
 
 	// authRoutes Validating token before reaching auth needed path
 	groupAuthMiddleware := router.Group("/").Use(groupAuthMiddleware(server.tokenMaker, server.config.AllRights))
 
 	groupAuthMiddleware.POST("/createCompany", server.createCompany)
+	groupAuthMiddleware.POST("/getCompany", server.getCompany)
 
 	server.router = router
 }
