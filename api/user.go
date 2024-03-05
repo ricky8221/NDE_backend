@@ -1,6 +1,8 @@
 package api
 
 import (
+	"database/sql"
+	"errors"
 	"github.com/gin-gonic/gin"
 	ndedb "github.com/ricky8221/NDE_DB/db/sqlc"
 	"github.com/ricky8221/NDE_DB/dbFunc"
@@ -42,6 +44,9 @@ func (server *Server) loginUser(ctx *gin.Context) {
 
 	user, err := server.store.GetUser(ctx, req.Username)
 	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			ctx.JSON(http.StatusUnauthorized, "Do not found the user")
+		}
 		ctx.JSON(http.StatusUnauthorized, errorResponse(err))
 		return
 	}

@@ -29,4 +29,6 @@ func main() {
 	if err != nil {
 		log.Fatal("Cannot start server", err)
 	}
+
+	log.Println("Connect to 8080")
 }

@@ -4,3 +4,6 @@ sqlc.yaml
 config
 app.env
 app.env
+docker-compose.yaml
+.env
+Dockerfile
